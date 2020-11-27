@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Deploy Pages
         run: |
-          echo Add other actions to build,
-          node --version
+          npm install
+          ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
