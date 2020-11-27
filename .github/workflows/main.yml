@@ -36,11 +36,12 @@ jobs:
         run: npm run stylelint
 
       - name: Unit Tests
-        run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
+        run: google-chrome --version
+        #run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
       
       - name: E2E Tests
-        run: google-chrome --version
-        # run: npx ng e2e --protractor-config=e2e/protractor-ci.conf.js
+        #run: google-chrome --version
+        run: npx ng e2e --protractor-config=e2e/protractor-ci.conf.js
         
       - name: Build
         run: |
