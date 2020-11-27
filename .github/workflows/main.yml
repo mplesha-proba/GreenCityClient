@@ -26,4 +26,4 @@ jobs:
       - name: Deploy Pages
         run: |
           npm install
-          ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
+          npx ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
