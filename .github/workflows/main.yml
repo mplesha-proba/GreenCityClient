@@ -29,7 +29,7 @@ jobs:
       - name: Build
         run: |
           npm install
-          npx ng build -- --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
+          npx ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
