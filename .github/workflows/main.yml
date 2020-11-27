@@ -30,7 +30,7 @@ jobs:
         run: |
           npm install
           wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-          apt install ./google-chrome-stable_current_amd64.deb
+          sudo apt-get install ./google-chrome-stable_current_amd64.deb -y
       
       - name: JS Linter
         run: npm run lint
