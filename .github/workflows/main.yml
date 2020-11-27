@@ -36,16 +36,15 @@ jobs:
         run: npm run stylelint
 
       - name: Unit Tests
-        run: google-chrome --version
-        # run: npm run test --watch=false --progress=false --browsers=ChromeHeadless
+        run: npx ng test --watch=false --progress=false --browsers=ChromeHeadless
       
       - name: E2E Tests
-        run: npx ng e2e --protractor-config=e2e/protractor-ci.conf.js
+        # run: npx ng e2e --protractor-config=e2e/protractor-ci.conf.js
         
       - name: Build
         run: |
-          npm run build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
-          npm run build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
+          npx ng build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
+          npx ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
       
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
