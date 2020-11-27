@@ -27,7 +27,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Install
-        run: npm install
+        run: |
+          npm install
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          apt install ./google-chrome-stable_current_amd64.deb
       
       - name: JS Linter
         run: npm run lint
